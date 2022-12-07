@@ -3,7 +3,12 @@ import 'package:get/get.dart';
 import 'package:pasal/presentation/resources/theme.dart';
 import 'package:pasal/presentation/resources/routes_manager.dart';
 
-void main() {
+import 'data/local/shared_preferences/shared_preferences_manager.dart';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await SharedPreferencesManager.getInstance();
   runApp(const MyApp());
 }
 

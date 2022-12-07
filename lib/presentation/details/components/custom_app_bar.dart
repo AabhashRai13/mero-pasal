@@ -5,7 +5,7 @@ import 'package:pasal/presentation/resources/color_manager.dart';
 import 'package:pasal/presentation/resources/size_config.dart';
 
 class CustomAppBar extends StatelessWidget {
-  final double rating;
+  final int rating;
 
   const CustomAppBar({super.key, required this.rating});
 

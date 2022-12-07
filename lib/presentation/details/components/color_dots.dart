@@ -22,9 +22,9 @@ class ColorDots extends StatelessWidget {
       child: Row(
         children: [
           ...List.generate(
-            product.colors.length,
+            product.colour!.length,
             (index) => ColorDot(
-              color: product.colors[index],
+              color: Colors.black,
               isSelected: index == selectedColor,
             ),
           ),
@@ -64,8 +64,9 @@ class ColorDot extends StatelessWidget {
       width: getProportionateScreenWidth(40),
       decoration: BoxDecoration(
         color: Colors.transparent,
-        border:
-            Border.all(color: isSelected ?ColorManager. kPrimaryColor : Colors.transparent),
+        border: Border.all(
+            color:
+                isSelected ? ColorManager.kPrimaryColor : Colors.transparent),
         shape: BoxShape.circle,
       ),
       child: DecoratedBox(

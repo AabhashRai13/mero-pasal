@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "770472399764",
+    "project_id": "meropasal-1b0cd",
+    "storage_bucket": "meropasal-1b0cd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:770472399764:android:29cfc9fa6b6e7cc6283581",
+        "android_client_info": {
+          "package_name": "com.example.pasal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "770472399764-59iljnghf9cn09j5j8nn108cmvih2nn9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.pasal",
+            "certificate_hash": "5917011d55a1ca5a03ea93cbfa301e8bda54bd76"
+          }
+        },
+        {
+          "client_id": "770472399764-msgg0798min2s26hpc8hfm24ef1o1h60.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmsBDEKee_3AywWM32TUpkzarKwC_6Og0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "770472399764-msgg0798min2s26hpc8hfm24ef1o1h60.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

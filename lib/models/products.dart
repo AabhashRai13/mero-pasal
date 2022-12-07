@@ -1,104 +1,62 @@
-import 'package:flutter/material.dart';
-import 'package:pasal/presentation/resources/assets_manager.dart';
-
 class Product {
-  final int id;
-  final String title, description;
-  final List<String> images;
-  final List<Color> colors;
-  final double rating, price;
-  final bool isFavourite, isPopular;
+  Product(
+      {required this.id,
+      required this.title,
+      required this.desc,
+      required this.img,
+      required this.categories,
+      required this.size,
+      required this.color,
+      required this.price,
+      required this.createdAt,
+      required this.updatedAt,
+      required this.colour,
+      this.isFavourite,
+      required this.v,
+      this.rating});
 
-  Product({
-    required this.id,
-    required this.images,
-    required this.colors,
-    this.rating = 0.0,
-    this.isFavourite = false,
-    this.isPopular = false,
-    required this.title,
-    required this.price,
-    required this.description,
-  });
+  String id;
+  String title;
+  String desc;
+  String img;
+  List<String> categories;
+  String size;
+  String color;
+  String price;
+  DateTime createdAt;
+  DateTime updatedAt;
+  int v;
+  bool? isFavourite;
+  int? rating;
+  List<String>? colour;
+  factory Product.fromJson(Map<String, dynamic> json) => Product(
+        id: json["_id"],
+        title: json["title"],
+        desc: json["desc"],
+        img: json["img"],
+        categories: List<String>.from(json["categories"].map((x) => x)),
+        size: json["size"],
+        color: json["color"],
+        price: json["price"],
+        createdAt: DateTime.parse(json["createdAt"]),
+        updatedAt: DateTime.parse(json["updatedAt"]),
+        isFavourite: json["isFavourite"],
+        rating: json["rating"],
+        colour: json["colour"],
+        v: json["__v"],
+      );
+
+  Map<String, dynamic> toJson() => {
+        "_id": id,
+        "title": title,
+        "desc": desc,
+        "img": img,
+        "categories": List<dynamic>.from(categories.map((x) => x)),
+        "size": size,
+        "color": color,
+        "price": price,
+        "createdAt": createdAt.toIso8601String(),
+        "updatedAt": updatedAt.toIso8601String(),
+        "__v": v,
+      };
 }
-
-// Our demo Products
-
-List<Product> demoProducts = [
-  Product(
-    id: 1,
-    images: [
-      "assets/images/ps4_console_white_1.png",
-      "assets/images/ps4_console_white_2.png",
-      "assets/images/ps4_console_white_3.png",
-      "assets/images/ps4_console_white_4.png",
-    ],
-    colors: [
-      const Color(0xFFF6625E),
-      const Color(0xFF836DB8),
-      const Color(0xFFDECB9C),
-      Colors.white,
-    ],
-    title: "Wireless Controller for PS4™",
-    price: 64.99,
-    description: description,
-    rating: 4.8,
-    isFavourite: true,
-    isPopular: true,
-  ),
-  Product(
-    id: 2,
-    images: [
-      "assets/images/popular_product-2.png",
-    ],
-    colors: [
-      const Color(0xFFF6625E),
-      const Color(0xFF836DB8),
-      const Color(0xFFDECB9C),
-      Colors.white,
-    ],
-    title: "Nike Sport White - Man Pant",
-    price: 50.5,
-    description: description,
-    rating: 4.1,
-    isPopular: true,
-  ),
-  Product(
-    id: 3,
-    images: [
-      "assets/images/glap.png",
-    ],
-    colors: [
-      const Color(0xFFF6625E),
-      const Color(0xFF836DB8),
-      const Color(0xFFDECB9C),
-      Colors.white,
-    ],
-    title: "Gloves XC Omega - Polygon",
-    price: 36.55,
-    description: description,
-    rating: 4.1,
-    isFavourite: true,
-    isPopular: true,
-  ),
-  Product(
-    id: 4,
-    images: [
-      ImageAssets.wirelessHeadset,
-    ],
-    colors: [
-      const Color(0xFFF6625E),
-      const Color(0xFF836DB8),
-      const Color(0xFFDECB9C),
-      Colors.white,
-    ],
-    title: "Logitech Head",
-    price: 20.20,
-    description: description,
-    rating: 4.1,
-    isFavourite: true,
-  ),
-];
-
-const String description =
-    "Wireless Controller for PS4™ gives you what you want in your gaming from over precision control your games to sharing …";
