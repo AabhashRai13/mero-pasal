@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:pasal/presentation/resources/size_config.dart';
 import 'categories.dart';
@@ -22,7 +24,7 @@ class Body extends StatelessWidget {
             const Categories(),
             const SpecialOffers(),
             SizedBox(height: getProportionateScreenWidth(30)),
-             PopularProducts(),
+            PopularProducts(),
             SizedBox(height: getProportionateScreenWidth(30)),
           ],
         ),
